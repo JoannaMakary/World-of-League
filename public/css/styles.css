@@ -1,0 +1,13 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+#main,
+#about {
+  text-align: center;
+}
+
+.top-nav {
+  font-size: 1.3rem;
+  text-align: center;
+}
