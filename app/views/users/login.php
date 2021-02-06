@@ -2,26 +2,28 @@
 require APPROOT . '/views/includes/header.php';
 ?>
 
-<div id="main">
-    <?php
-    require APPROOT . '/views/includes/nav.php';
-    ?>
-
-    <h1>World of League</h1>
+<div class='container'>
+<div id="login" class='mx-auto'>
 
     <form action="<?php echo URLROOT; ?>/users/login" method="POST">
-    <input type="text" placeholder="Username *" name="username" />
-    <span class="invalidFeedback">
+    Username: <input type="text" placeholder="Username" name="username" class='mb-2'/>
+    <div class="invalidFeedback">
         <?php echo $data['usernameError']; ?>
-    </span>
+    </div>
 
-    <input type="password" placeholder="Password *" name="password" />
-    <span class="invalidFeedback">
+    Password: <input type="password" placeholder="Password *" name="password" class='mb-2'/>
+    <div class="invalidFeedback">
         <?php echo $data['passwordError']; ?>
-    </span>
+    </div>
+    <input id='loginBtn' type='submit' name='login' value='Login' />
 
-    <button id="submit" type="submit" value="submit">Submit</button>
+    <!-- <button id="submit" type="submit" value="submit">Submit</button> -->
 
-    <p class="options">Don't have an account? <a href="<?php echo URLROOT; ?>/users/register">Register here!</a>
+    <p class="mt-3 options">Don't have an account? <a href="<?php echo URLROOT; ?>/users/register">Register here!</a>
     </form>
 </div>
+</div>
+
+<?php
+require APPROOT . '/views/includes/footer.php';
+?>

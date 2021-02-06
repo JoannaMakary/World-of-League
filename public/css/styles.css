@@ -1,13 +1,364 @@
-* {
-  font-family: "Poppins", sans-serif;
+:root {
+  --league-background-color: #111111;
+  --league-secondary-background: #161616;
+  --league-base-color: #f9f9f9;
+  --league-border-color: rgb(51, 51, 51);
+  --league-secondary-color: #8f8f8f;
+  --league-content: rgb(6, 28, 37);
+  --league-content-text: rgb(209, 218, 222);
+  --league-banner: #c28f2c;
+  --league-blue: #0bc6e3;
+  --league-dark-blue: #1a98ac;
+  --league-gold: #d0a85c;
+  --league-link: #7e7e7e;
+  --riot-red: #d13639;
+  --riot-dark-red: #af2022;
+  --riot-text-error: #be29cc;
+  --riot-background-error: #f3e4f5;
 }
 
-#main,
-#about {
+body {
+  font-family: "Poppins" !important;
+  background-color: var(--league-secondary-background) !important;
+  color: var(--league-base-color);
+}
+
+a,
+a:visited,
+a:active {
+  color: var(--league-blue);
+  text-decoration: none !important;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: var(--league-dark-blue) !important;
+}
+
+.navbar {
+  background-color: var(--league-background-color) !important;
+  border-bottom: 2px solid #333333;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--league-border-color);
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  padding-top: 0.7rem !important;
+  padding-left: 0.8rem !important;
+  padding-right: 0.8rem !important;
+  color: var(--league-base-color) !important;
+}
+
+.nav-item:hover {
+  border-bottom: 2px var(--league-blue) solid;
+}
+
+.nav-item:nth-child(1) {
+  margin-right: 5px;
+}
+
+.nav-item:nth-child(2) {
+  margin-right: 30px !important;
+}
+
+.nav-item:nth-child(4) {
+  margin-left: 30px !important;
+}
+
+.nav-item:nth-child(5) {
+  margin-left: 5px !important;
+}
+
+#banner {
+  text-align: center;
+  color: var(--league-banner);
+}
+
+#main {
+  width: 66vw;
+}
+
+#footer {
+  position: absolute;
+  left: 0;
+  bottom: auto;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--league-background-color) !important;
+  border-top: 1px solid #333333;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: var(--league-border-color);
+  color: var(--league-secondary-color);
+}
+
+div.legalBoilerPlate {
+  width: 70%;
+  font-size: 0.75rem;
+}
+
+#errorPopup,
+.invalidFeedback {
+  background-color: var(--riot-background-error);
+  border: 2px solid var(--riot-text-error);
+  color: var(--riot-text-error);
+  padding: 0.75rem 2rem;
+  border-radius: 0.25rem;
+}
+
+#successPopup {
+  background-color: var(--league-blue);
+  border: 2px solid var(--league-dark-blue);
+  color: var(--league-secondary-background);
+  padding: 0.75rem 2rem;
+  border-radius: 0.25rem;
+}
+
+#register {
+  margin-top: 10px;
+  background-color: var(--league-content) !important;
+  color: var(--league-content-text);
+  width: 30vw;
+  padding: 1rem 2rem;
+}
+
+.registerInput {
+  width: 100%;
+}
+
+input[type="text"],
+input[type="textarea"],
+input[type="password"],
+input[type="number"],
+input[type="email"],
+input[type="email"]:active,
+input[type="text"]:visited,
+input[type="textarea"]:active,
+input[type="password"]:active,
+input[type="number"]:active {
+  color: var(--league-base-color);
+  width: 100%;
+  padding: 10px 15px 10px 15px !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px !important;
+  outline: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="textarea"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border-bottom: 2px solid var(--league-blue);
+}
+
+#login {
+  margin-top: 10px;
+  background-color: var(--league-content) !important;
+  color: var(--league-content-text);
+  width: 30vw;
+  padding: 1rem 2rem;
+}
+
+#registerBtn,
+#createBtn,
+#loginBtn,
+#fightBtn {
+  background-color: var(--riot-red);
+  border-color: var(--riot-red);
+  margin-top: 10px;
+  width: 100%;
+  color: white;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+#registerBtn:hover,
+#createBtn:hover,
+#loginBtn:hover {
+  background-color: var(--riot-dark-red);
+}
+
+#content {
+  padding: 1rem 2rem;
+  text-align: center;
+  background-color: var(--league-content);
+  color: var(--league-content-text);
+  border: 1px solid var(--league-border-color);
+  margin-top: 1rem;
+}
+
+.pageTitle {
+  color: var(--league-base-color);
+}
+
+#menu {
+  background-color: var(--league-blue);
+  padding: 1rem 2rem !important;
+  border: 1px solid var(--league-dark-blue);
   text-align: center;
 }
 
-.top-nav {
-  font-size: 1.3rem;
+#menu-link {
+  color: var(--league-base-color);
+  margin-right: 1rem;
+}
+
+#menu-link:hover {
+  color: var(--league-secondary-background);
+}
+
+#profile {
+  padding: 2rem 2rem;
+  text-align: left;
+  background-color: var(--league-content);
+  color: var(--league-content-text);
+  border: 1px solid var(--league-border-color);
+  margin-top: 1rem;
+}
+
+label {
+  display: inline-block;
+}
+
+#createMonster {
+  margin-top: 10px;
+  background-color: var(--league-content) !important;
+  color: var(--league-content-text);
+  width: 600px;
+  padding: 1.5rem 3rem;
+}
+
+.createInput {
+  width: 100%;
+}
+
+#explore {
+  background-color: var(--league-content);
+  color: var(--league-base-color);
+  padding: 2rem;
+  border: 1px solid rgb(3, 46, 63);
+  border-radius: 0.5rem;
+}
+
+#battle-background {
+  background-image: url(https://img.redbull.com/images/q_auto,f_auto/redbullcom/2019/10/29/b9913f60-c411-4c8b-8436-32433f694a91/new-alcoves-will-cause-huge-paranoia-for-sidelaners);
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+#battle-card {
+  background-color: var(--league-background-color);
+  margin: auto;
+  width: 300px;
+  border-radius: 0.5rem;
+  border: 1px solid var(--league-banner);
+}
+
+#opponent-name {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  background-color: #101918;
+  color: #cacaca;
+  border: 1px solid #57542d;
+  padding: 0.5rem;
+}
+
+#opponent-hp {
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  color: #cacaca;
+  border: 1px solid #57542d;
+  padding: 0.5rem;
+}
+
+.health-text {
+  background-color: green;
+  background-image: linear-gradient(to right, green, rgb(0, 71, 0));
+  border: 1px solid black;
+  border-radius: 0.3rem;
+  color: white;
+  width: 100%;
+  display: inline-block;
   text-align: center;
+  font-weight: 800;
+  -webkit-text-stroke: 1.1px black;
+  -webkit-text-fill-color: white;
+}
+
+#battle-bottom {
+  background-color: var(--league-background-color);
+  margin: auto;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--league-banner);
+}
+
+#battleBtn {
+  background-color: var(--league-blue);
+  border: 1px solid var(--league-dark-blue);
+  width: 100%;
+  color: white;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+#runBtn {
+  background-color: var(--riot-red);
+  border: 1px solid var(--riot-dark-red);
+  width: 100%;
+  color: white;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }

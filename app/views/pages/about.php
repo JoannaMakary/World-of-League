@@ -3,9 +3,10 @@
 ?>
 
 <div id="about">
-<?php
-    require APPROOT . '/views/includes/nav.php';
-?>
 
 <h1>About</h1>
 </div>
+
+<?php
+require APPROOT . '/views/includes/footer.php';
+?>
