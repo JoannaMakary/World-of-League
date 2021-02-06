@@ -1,18 +1,19 @@
 <?php
-
 class User {
     private $db;
-
     public function __construct() {
         $this->db = new Database;
     }
 
-    public function register ($data) {
-        $this->db->query('INSERT INTO users (username, email, password) VALUES (:username, :email, :password');
+    public function register($data) {
+        $this->db->query('INSERT INTO users (username, email, password) VALUES(:username, :email, :password)');
+
+        //Bind values
         $this->db->bind(':username', $data['username']);
         $this->db->bind(':email', $data['email']);
         $this->db->bind(':password', $data['password']);
-        // Execute function
+
+        //Execute function
         if ($this->db->execute()) {
             return true;
         } else {
@@ -21,13 +22,10 @@ class User {
     }
 
     public function login($username, $password) {
-        $this->db->query('SELECT * FROM users WHERE username = :username');
-
+        $this->db->query('SELECT * FROM users WHERE username = (:username)');
         //Bind value
         $this->db->bind(':username', $username);
-
         $row = $this->db->single();
-
         $hashedPassword = $row->password;
 
         if (password_verify($password, $hashedPassword)) {
@@ -37,13 +35,16 @@ class User {
         }
     }
 
-    // Find user by e-mail, e-mail is passed in by the Controller.
+    //Find user by email. Email is passed in by the Controller.
     public function findUserByEmail($email) {
-        // Prepare the PDO query statement
+        //Prepared statement
         $this->db->query('SELECT * FROM users WHERE email = :email');
+
+        //Email param will be binded with the email variable
         $this->db->bind(':email', $email);
-        // Check if e-mail is already registered
-        if($this->db->rowCount() < 0) {
+
+        //Check if email is already registered
+        if($this->db->rowCount() > 0) {
             return true;
         } else {
             return false;

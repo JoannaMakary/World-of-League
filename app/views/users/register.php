@@ -7,24 +7,32 @@ require APPROOT . '/views/includes/header.php';
 
         <form action="<?php echo URLROOT; ?>/users/register" method="POST">
             Username: <input type="text" placeholder="Username" name="username" class='mb-2' />
-            <div class="invalidFeedback">
-                <?php echo $data['usernameError']; ?>
-            </div>
+            <?php if($data['usernameError']) {
+                echo "<div class='invalidFeedback'>
+                {$data['usernameError']}
+                </div>";
+            }?>
 
             Email: <input type="email" placeholder="Email" name="email" class='mb-2' />
-            <div class="invalidFeedback">
-                <?php echo $data['emailError']; ?>
-            </div>
+            <?php if($data['emailError']) {
+                echo "<div class='invalidFeedback'>
+                {$data['emailError']}
+                </div>";
+            }?>
 
             Password: <input type="password" placeholder="Password" name="password" class='mb-2' />
-            <div class="invalidFeedback">
-                <?php echo $data['passwordError']; ?>
-            </div>
+            <?php if($data['passwordError']) {
+                echo "<div class='invalidFeedback'>
+                {$data['passwordError']}
+                </div>";
+            }?>
 
             Confirm Password: <input type="password" placeholder="Confirm Password" name="confirmPassword" class='mb-2' />
-            <div class="invalidFeedback">
-                <?php echo $data['confirmPasswordError']; ?>
-            </div>
+            <?php if($data['confirmPasswordError']) {
+                echo "<div class='invalidFeedback'>
+                {$data['confirmPasswordError']}
+                </div>";
+            }?>
 
             <input id='registerBtn' type='submit' name='register' value='Register' />
 
