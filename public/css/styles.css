@@ -23,6 +23,10 @@ body {
   color: var(--league-base-color);
 }
 
+h3 {
+  color: var(--league-gold);
+}
+
 a,
 a:visited,
 a:active {
