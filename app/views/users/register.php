@@ -2,6 +2,13 @@
 require APPROOT . '/views/includes/header.php';
 ?>
 
+<!-- If the user is already logged in, do not display register, redirect to profile. -->
+<?php if (isLoggedIn()) : 
+    header('location: ' . URLROOT . '/users/profile');
+    ?>
+<?php endif; ?>
+<?php if (!isLoggedIn()) : ?>
+<!-- Otherwise show the register container -->
 <div class='container'>
     <div id="login" class='mx-auto'>
 
@@ -42,6 +49,7 @@ require APPROOT . '/views/includes/header.php';
         </form>
     </div>
 </div>
+<?php endif; ?>
 
 <?php
 require APPROOT . '/views/includes/footer.php';

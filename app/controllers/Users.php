@@ -147,6 +147,10 @@ class Users extends Controller
         $this->view('users/login', $data);
     }
 
+    public function profile() {
+        $this->view('users/profile');
+    }
+
     public function createUserSession($user)
     {
         $_SESSION['user_id'] = $user->id;
