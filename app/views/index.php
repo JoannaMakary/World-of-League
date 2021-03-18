@@ -14,9 +14,9 @@ require APPROOT . '/views/includes/header.php';
     <?php endif; ?>
 </div>
 
-<div id='menu'>
+<!-- <div id='menu'>
     Home Profile Explore Shop
-</div>
+</div> -->
 
 <?php
 
