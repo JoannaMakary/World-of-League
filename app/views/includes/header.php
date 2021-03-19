@@ -40,7 +40,7 @@
 
             <span class="navbar-text">
                 <ul class="navbar-nav">
-                    <li class="nav-item text-center">
+                    <li class="nav-item text-center login">
                         <a class="nav-link" href="<?php echo URLROOT; ?>/pages/index">Login</a>
                     </li>
                 </ul>
