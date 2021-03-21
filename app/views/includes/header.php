@@ -38,14 +38,41 @@
                 </li>
             </ul>
 
-            <span class="navbar-text">
-                <ul class="navbar-nav">
-                    <li class="nav-item text-center login">
-                        <a class="nav-link" href="<?php echo URLROOT; ?>/pages/index">Login</a>
+            <li class="dropdown">
+                <a class="nav-link login" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Login
+                </a>
+                <ul class="dropdown-menu login-form">
+                    <li>
+                        <form action="/examples/actions/confirmation.php" method="post">
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input type="text" class="form-control" required="required">
+                            </div>
+                            <div class="form-group">
+                                <div class="clearfix">
+                                    <label>Password</label>
+                                    <a href="#" class="pull-right text-muted"><small>Forgot?</small></a>
+                                </div>
+
+                                <input type="password" class="form-control" required="required">
+                            </div>
+                            <input type="submit" class="btn btn-primary btn-block" value="Login">
+                        </form>
                     </li>
                 </ul>
-            </span>
+            </li>
 
+
+            <li class="text-center">
+                <a class="nav-link register" href="<?php echo URLROOT; ?>/pages/index">REGISTER</a>
+            </li>
+            </ul>
+            <!-- 
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form> -->
         </div>
     </nav>
 

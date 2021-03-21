@@ -18,14 +18,14 @@
 }
 
 body {
-  font-family: "Poppins" !important;
+  font-family: 'Poppins' !important;
   background-color: var(--league-secondary-background) !important;
   color: var(--league-base-color);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.2)),
-    url("https://static.lolwallpapers.net/2014/12/Howling_Abyss_summoner_platform.jpg");
+    url('https://static.lolwallpapers.net/2014/12/Howling_Abyss_summoner_platform.jpg');
 }
 
 h3 {
@@ -70,10 +70,56 @@ a:hover {
   border: 1px solid white !important;
   border-radius: 0.25rem;
   padding: 0.25rem 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.register {
+  border: 1px solid white !important;
+  background-color: var(--league-base-color);
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  color: black !important;
+  text-shadow: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-left: 1rem;
 }
 
 .nav-item:hover {
   border-bottom: 2px var(--league-blue) solid;
+}
+
+#navbarSupportedContent > li.dropdown.show > ul {
+  background-color: #2f333c;
+}
+
+.navbar .login-form label {
+  color: white;
+  font-weight: normal;
+}
+.navbar .dropdown-menu.login-form {
+  width: 280px;
+  padding: 20px;
+  font-size: 14px;
+}
+.navbar .nav .dropdown-menu.login-form a {
+  padding: 0 !important;
+  color: #3f4660;
+  font-weight: normal;
+}
+.navbar .nav .dropdown-menu.login-form a:hover {
+  text-decoration: underline;
+}
+.navbar .dropdown-menu.login-form .checkbox-inline {
+  margin-top: 10px;
+}
+
+#navbarSupportedContent > li.dropdown.show > ul > li > form > input {
+  width: 100%;
+  margin-top: 10px;
+  background-color: #3f4660;
+  border: 1px solid white;
 }
 
 #banner {
@@ -124,7 +170,7 @@ div.legalBoilerPlate {
 }
 
 #league-trans {
-  background: url("http://localhost/world-of-league/public/images/lux-main.png");
+  background: url('http://localhost/world-of-league/public/images/lux-main.png');
   position: fixed;
   bottom: 0;
   right: 0;
@@ -190,16 +236,16 @@ play-btn:hover {
   width: 100%;
 }
 
-input[type="text"],
-input[type="textarea"],
-input[type="password"],
-input[type="number"],
-input[type="email"],
-input[type="email"]:active,
-input[type="text"]:visited,
-input[type="textarea"]:active,
-input[type="password"]:active,
-input[type="number"]:active {
+input[type='text'],
+input[type='textarea'],
+input[type='password'],
+input[type='number'],
+input[type='email'],
+input[type='email']:active,
+input[type='text']:visited,
+input[type='textarea']:active,
+input[type='password']:active,
+input[type='number']:active {
   color: var(--league-base-color);
   width: 100%;
   padding: 10px 15px 10px 15px !important;
@@ -213,11 +259,11 @@ input[type="number"]:active {
   -o-transition: all 0.3s ease-in-out;
 }
 
-input[type="text"]:focus,
-input[type="textarea"]:focus,
-input[type="password"]:focus,
-input[type="number"]:focus,
-input[type="email"]:focus {
+input[type='text']:focus,
+input[type='textarea']:focus,
+input[type='password']:focus,
+input[type='number']:focus,
+input[type='email']:focus {
   background-color: rgba(255, 255, 255, 0.1) !important;
   padding: 3px 0px 3px 3px;
   margin: 5px 1px 3px 0px;
